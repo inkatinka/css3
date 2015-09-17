@@ -1,0 +1,736 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>CSS3: Transistions and Visual Effects</title>
+    
+    <meta name="description" content="Beschreibung" />
+
+    <link rel="stylesheet" href="css/impress.css" />
+    
+    <!--<link rel="shortcut icon" href="icons/favicon.ico" />
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" /> -->
+</head>
+
+<body class="impress-not-supported">
+
+<div class="fallback-message">
+    <p>Diese auf impress.js (HTML5) basierende Präsentation sollte in einem Browser betrachtet werden, der HTML5 beherrscht. Ihrer tut es nicht oder nicht vollständig.</p>
+</div>
+
+<article id="impress">
+
+    <section id="start" class="step slide" data-x="-5500" data-y="-1500">
+      <header>
+      </header>
+      <main>
+	<hgroup>
+	  <h1>CSS3: Transistions and Visual Effects</h1>
+	  <h2><em>Eine Präsentation von Inka Köcher</em></h2>
+	</hgroup>
+      </main>
+      <footer>
+	<!--<p><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.de"><img alt="Creative Commons Lizenzvertrag" style="border:0;float:right;margin:10px 10px 0 0;" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a><span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type" style="margin-left:-4px;">Präsentationen mit impress.js</span> von <a xmlns:cc="http://creativecommons.org/ns#" href="https://www.twitter.com/bibliothekswelt" property="cc:attributionName" rel="cc:attributionURL">Sebastian Wolf</a> ist lizenziert unter einer <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.de">Creative Commons Namensnennung - Weitergabe unter gleichen Bedingungen 3.0 Unported Lizenz</a>.</p>
+	<p>Version 1.22, letzte Aktualisierung 10.03.2014 (Download-Version)</p>-->
+      </footer>
+    </section>
+
+    <section class="step slide" data-x="-4500" data-y="-1500">
+      <header>
+      </header>
+      <main>
+	<h2>Was ist CSS3?</h2>
+        <ul>
+	  <li>Weiterentwicklung von CSS</li>
+	  <li>Ermöglicht eine Entlastung von Javascript</li>
+	  <li>Transition, Transform, Animation</li>
+	  <li>Zahlreiche Effekte erleichtern Webdesign</li>
+	</ul>
+      </main>
+    </section>
+
+    <section class="step slide" data-x="-3500" data-y="-1500">
+      <header>
+      </header>
+      <main>
+          <strong><p style= "font-size:130px">Welche Effekte?</p></strong>
+       <p></p>
+      </main>
+    </section>
+
+    <section class="step slide multi" data-x="-2500" data-y="-1500">
+      <header>
+      </header>
+      <main>
+        <h2>zum Beispiel:</h2>
+          <img id="love" src="https://pbs.twimg.com/profile_images/2486348386/3zpfzaehwbxl5pqbbl84.jpeg" >
+	
+      </main>
+    </section>
+
+    <section class="step slide" data-x="-1500" data-y="-1500">
+      <header>
+      </header>
+      <main>
+        <h3>Rotation</h3>
+	<img id="love2" src="https://pbs.twimg.com/profile_images/2486348386/3zpfzaehwbxl5pqbbl84.jpeg" >
+      </main>
+    </section>
+
+    <section class="step slide" data-x="-500" data-y="-1500">
+      <header>
+      </header>
+      <main>
+        <h3>Neigen</h3>
+	<img id="love3" src="https://pbs.twimg.com/profile_images/2486348386/3zpfzaehwbxl5pqbbl84.jpeg" >
+      </main>
+    </section>
+
+    <section class="step slide" data-x="500" data-y="-1500">
+      <header>
+      </header>
+      <main>
+        <h3>Schatten</h3>
+	<img id="love4" src="https://pbs.twimg.com/profile_images/2486348386/3zpfzaehwbxl5pqbbl84.jpeg" >
+      </main>
+    </section>
+
+     <section class="step blank" data-x="-5000" data-y="100" data-rotate="90" data-scale="2.5">
+      <header>
+      </header>
+      <main>
+        <h2>Transistions</h2>
+	
+	<ul>
+	  <li>Transition bedeutet Übergang</li>
+	  <li>Bewegung von Interface-Elementen</li>
+	  <li>Beispiel: im Smartphone zwischen Screens blättern</li>
+	</ul>
+      </main>
+    </section>
+
+   <section class="step blank" data-x="-3000" data-y="800" data-rotate="90" data-scale="2.5">
+      <header>
+      </header>
+      <main>
+	<h2>Transition im Code realisieren</h2>
+	<ul>
+          <li>Definiert mit zwei Zuständen, zwischen denen Animation abläuft</li>
+          <li>Start wird über Ereignis ausgelöst ("<i>Event triggern</i>")</li>
+          </ul>
+	
+      </main>
+    </section>
+
+    <section class="step blank" data-x="-1000" data-y="1700" data-rotate="90" data-scale="2.5">
+      <header>
+      </header>
+      <main>
+        <h3>Zustand A: Start</h3>
+
+	<ul>
+	<li>Transition-Eigenschaft mit mindestens zwei Werten für den Start definieren:<ul><li>CSS-Eigenschaft</li>
+        <li>Zeit</li>
+        </ul></li>
+	</ul>
+      <code>.button {<br/>
+        background: white;<br/>
+        -web-transition: background 0.2s;<br/>
+    }</code>    
+      </main>
+    </section>
+
+   <section class="step blank" data-x="1000" data-y="3500" data-rotate="90" data-scale="2.5">
+      <header>
+      </header>
+      <main>
+	<h3>Zustand B: Ende</h3>
+	
+	<ul>
+	<li>Die veränderten Werte für das Ende setzen</li>
+	</ul>
+ <code>.button: hover {<br/>
+ background: red;<br/>
+ }</code>
+      </main>
+    </section>
+
+    <section class="step blank" data-x="4000" data-y="4400" data-rotate="90" data-scale="2.5">
+      <header>
+      </header>
+      <main>
+	<h2>Beispiel: Transistion</h2>
+	 <div class="box"></div></td>
+           
+	 
+      </main>
+    </section>
+ 
+    <section class="step blank" data-x="4000" data-y="6300" data-rotate="90" data-scale="2.5">
+      <header>
+      </header>
+      <main>
+	<h2>Source-Code</h2>
+	<code style="font-size:20px">.box {
+  background: #2db34a;
+  border-radius: 6px;
+  cursor: pointer;
+  height: 200px;
+    
+  line-height: 200px;
+  text-align: center;
+  transition-property: background;
+  transition-duration: 1s;
+  transition-timing-function: linear;
+  width: 200px;
+}
+.box:hover {
+  background: #ff7b29;
+}</code>
+      </main>
+    </section>
+
+    <section class="step slide" data-x="500" data-y="-500">
+      <header>
+      </header>
+      <main>
+        <h1 class="breit">Visual Effects</h1>
+	
+      </main>
+    </section>
+<section class="step slide" data-x="800" data-y="-800">
+      <header>
+      </header>
+      <main>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+       <div class="bezier"><img src="https://pixabay.com/static/uploads/photo/2013/07/12/13/52/rocket-147466_640.png"></div>
+	
+      </main>
+    </section>
+  
+
+    <section class="step slide" data-x="500" data-y="250">
+      <header>
+      </header>
+      <main>
+        <h2>...außerdem:</h2>
+	<ul>
+          <li>Ein-/Auszoomen</li>
+          <li>Ein-/Ausblenden</li>
+          <li>Verscheidene Filter wie Sepia/Blur</li>
+          <li>Rotation</li>
+          <li>Verschieben und Deckkraft</li>
+          <li>...</li></ul>
+      </main>
+    </section>
+    
+    <section class="step slide multi" data-x="500" data-y="1000">
+  <main>    
+          <div class= "happy"><img src=http://4.bp.blogspot.com/-tDBh_PgjRO8/UBffW32f6aI/AAAAAAAABFw/_BNK-o8SsVs/s1600/little%2Bkid%2Bhappy.png ></div>
+        </main>  
+    </section>    
+      <section class="step slide multi" data-x="1000" data-y="1000">
+  <main>    
+          <div class= "happy1"><img src=http://4.bp.blogspot.com/-tDBh_PgjRO8/UBffW32f6aI/AAAAAAAABFw/_BNK-o8SsVs/s1600/little%2Bkid%2Bhappy.png ></div>
+        </main>  
+    </section>
+      
+ <section class="step slide multi" data-x="1500" data-y="1000">
+  <main>    
+          <div class="container">
+<img src="http://4.bp.blogspot.com/-tDBh_PgjRO8/UBffW32f6aI/AAAAAAAABFw/_BNK-o8SsVs/s1600/little%2Bkid%2Bhappy.png" alt="">
+<div class="textbox">
+<p class="text">Vielen Dank für Ihre Aufmerksamkeit!</p>
+</div>
+</div>
+        </main>  
+    </section>    
+    <section class="step slide" data-x="500" data-y="1750">
+      
+      <main>
+        <code><br/><br/><br/>one more impressive example: <strong>http://daftpunk.themaninblue.com/</strong>!</code>
+	
+      </main>
+    </section> 
+
+   <!-- <section class="step slide multi" data-x="500" data-y="1000">
+      <header>
+	<img src="images/pub.jpg" class="icon" alt="" title="Ein kleines Icon oben rechts">
+      </header>
+      <main>
+        <h2>Kopfbereich (2)</h2>
+	<p>Soll oben ein weiteres Logo zu sehen sein, fügt man einfach ein <code>&lt;img&gt;</code> in den <code>&lt;header&gt;</code> ein.</p>
+	<pre><code>&lt;header&gt;
+ &lt;img src="images/pub.jpg" alt=""&gt;
+&lt;/header&gt;</code></pre>
+	<p>Grafiken im <code>&lt;header&gt;</code> werden per CSS rechts positioniert und ggf. automatisch verkleinert, damit sie optimal in den Kopfbereich passen. Gut, oder?</p>
+      </main>
+    </section> 
+
+    <section class="step slide multi" data-x="500" data-y="1000">
+      <header>
+	<img src="images/cc_by-sa.png" class="icon blass" alt="CC-Lizenz" title="Diese Präsentation steht unter CC-BY-SA-Lizenz (Namensnennung, Weitergabe nur unter gleicher Lizenz">
+      </header>
+      <main>
+        <h2>Kopfbereich (3)</h2>
+	<p>Grafiken im <code>&lt;header&gt;</code> sind immer etwas abgeblasst. Um eine Grafik noch stärker abzublassen (so wie auf dieser Folie oben rechts zu sehen), ergänzt man die Klasse <code>blass</code></p>
+	<pre><code>&lt;img src="images/cc_by-sa.png" class="icon blass" alt=""&gt;</code></pre>
+	<p>Tipp: Mit der Klasse <code>blass</code> kann man natürlich auch <span class="blass">Text abblassen</span>.</p>
+	<pre><code>&lt;p class="blass"&gt;Blasser Text&lt;/p&gt;</code></pre>
+      </main>
+    </section> 
+
+    <section class="step slide multi" data-x="500" data-y="1000">
+      <header class="blank">
+      <h1>Überschrift statt Logo</h1>
+      </header>
+      <main>
+        <h2>Kopfbereich (4)</h2>
+	<p>Soll das Standard-Logo oben links einmal nicht zu sehen sein (sondern gar nichts oder ein Text), ergänzt man die Klasse <code>blank</code> im <code>&lt;header&gt;</code>.</p>
+	<pre><code>&lt;header class="blank"&gt;
+  &lt;h1&gt;Überschrift statt Logo&lt;/h1&gt;
+&lt;/header&gt;</code></pre>
+      </main>
+    </section> 
+
+    <section class="step slide" data-x="500" data-y="1750">
+      <header>
+      </header>
+      <main>
+        <h2>Grafiken</h2>
+	<p>Grafiken legt man im Unterordner <code>images</code> ab und kann sie natürlich überall einfügen (und verlinken).</p>
+	<pre><code>&lt;img src="images/vbf.jpg" alt="Virtuelle Bibliotheksführung"&gt;</code></pre>
+	<p><img src="images/vbf.jpg" alt="Virtuelle Bibliotheksführung"></p>
+      </main>
+    </section>
+
+    <section class="step slide" data-x="1500" data-y="1750">
+      <header>
+      </header>
+      <main>
+        <h2>Grafiken im Vollbild</h2>
+	<p>Soll die Grafik die gesamte Breite der Folie einnehmen ergänzt man die Klasse <code>vollbild</code>.</p>
+	<pre><code>&lt;img src="images/pub.jpg" class="vollbild" alt=""&gt;</code></pre>
+	<p>Die Grafik wird dann automatisch auf Folienbreite angepasst (also vergrößert oder verkleinert). Das Ergebnis ist auf der nächsten Folie zu sehen.</p>
+	<p>Bei (zu) kleinen Grafiken kann es dann natürlich zu unschönen "Unschärfe"-Effekten führen, daher sollte man <code>vollbild</code> nur bei (zu) großen Grafiken einsetzen.</p>
+       </main>
+    </section>
+
+    <section class="step slide" data-x="2500" data-y="1750">
+      <header>
+      </header>
+      <main>
+        <h2>Beispiel</h2>
+	<p><img src="images/pub.jpg" class="vollbild" alt=""></p>
+	<p>Diese Grafik in <a href="images/pub.jpg">Originalgröße</a>.</p>
+       </main>
+    </section>
+
+    <section class="step blank" data-x="2000" data-y="3750" data-rotate="270" data-scale="2.5">
+        <h1 class="schmal">Es geht rund&hellip;</h1>
+	<em>wenn man (so wie auf dieser Folie)<br><code>data-rotate="270"</code> verwendet.</em>
+    </section>
+
+    <section class="step slide multi" data-x="1000" data-y="4500">
+      <header>
+      </header>
+      <main>
+        <h2>Textgröße und -laufweite</h2>
+	<ul>
+	  <li>Wenn <span class="gross">großer</span> Text gewünscht ist, verwendet man die Klasse <code>gross</code></li>
+	  <li>Soll der Text <span class="klein">kleiner</span> werden, dann ist die Klasse <code>klein</code> dein Freund und Helfer</li>
+	  <li>Zum Ändern der Laufweite gibt es die Klassen <code><span class="schmal">schmal</span></code>, <code><span class="breit">breit</span></code> und <code><span class="extrabreit">extrabreit</span></code></li>
+	</ul>
+	<pre><code>&lt;p class="gross">Großer Text&lt;/p&gt;</code></pre>
+       </main>
+    </section>
+
+    <section class="step slide multi" data-x="1000" data-y="4500">
+      <header>
+      </header>
+      <main>
+        <h2>Textgröße und -laufweite</h2>
+	<p class="gross breit">Das lässt sich auch kombinieren.</p>
+	<pre><code>&lt;p class="gross breit">Großer und breiter Text&lt;/p&gt;</code></pre>
+       </main>
+    </section>
+
+    <section class="step slide" data-x="1000" data-y="3750">
+      <header>
+      </header>
+      <main>
+        <h2>Es geht wieder aufwärts</h2>
+	<p>Für diesen Effekt reduziert man den <code>data-y</code>-Wert einfach um 750. Der <code>data-x</code>-Wert bleibt wieder gleich
+	<h3>Folie 1</h3>
+	<pre><code>&lt;section class="step slide" data-x="1500" <strong>data-y="1000"</strong>&gt;</code></pre>
+	<h3>Folie 2 (über Folie 1)</h3>
+	<pre><code>&lt;section class="step slide" data-x="1500" <strong>data-y="250"</strong>&gt;</code></pre>
+      </main>
+    </section>
+
+    <section class="step slide" data-x="1000" data-y="3000">
+      <header>
+      </header>
+      <main>
+        <h2>Quizfrage</h2>
+	<p>Welchen Wert muss ich - im Vergleich zu dieser Folie - um wie viel verändern, damit die Präsentation links weiterwandert (denn genau das tut sie gleich)?</p>
+	<ol type="a" class="kompakt">
+	<li><code>data-y</code> um 750 reduzieren</li>
+	<li><code>data-x</code> um 750 erhöhen</li>
+	<li><code>data-y</code> um 1000 erhöhen</li>
+	<li><code>data-x</code> um 1000 reduzieren</li>
+	<li><code>data-scale</code> um 1 erhöhen</li>
+	<li><code>data-rotate</code> um 180 erhöhen</li>
+	</ol>
+      </main>
+    </section>
+
+    <section class="step slide hide" data-x="0" data-y="3000">
+      <header>
+      </header>
+      <main>
+        <h2>Antwort</h2>
+	<p>d. <code>data-x</code>-Wert um 1000 reduzieren<br><br>
+	<code>data-x</code> legt - wie auf <a href="#raster">dieser Folie</a> erklärt - die waagerechte Positionierung fest. Der Wert muss um <code>1000</code> (Pixel) geändert werden, damit sich die Folien nicht überlappen. Soll übrigens eine Folie (wie diese) erst beim Wechsel eingeblendet werden (also nicht rechts oder links neben dieser Folie erscheinen), ergänzt man die Klasse <code>hide</code>.</p>
+	<pre><code>&lt;section class="step slide <strong>hide</strong>" data-x="-2000" data-y="2000"&gt;</code></pre>
+      </main>
+    </section>
+
+    <section id="verlinkung" class="step slide" data-x="-1000" data-y="3000">
+      <header>
+      </header>
+      <main>
+        <h2>Verlinkung</h2>
+	<p>Links können ganz normal mit dem <code>&lt;a&gt;</code>-Tag gesetzt werden. Will man eine andere Folie innerhalb dieser Präsentation verlinken, gibt man die ID (Nummer oder Name) der Folie an.</p>
+	<pre><code>&lt;a href="#step-19"&gt;Folie 19&lt;/a&gt;</code></pre>
+	<p><a href="#step-19">Folie 19</a></p>
+	<pre><code>&lt;a href="#name"&gt;Folien benennen&lt;/a&gt;</code></pre>
+	<p><a href="#name">Folien benennen</a></p>
+      </main>
+    </section>
+
+    <section class="step slide multi" data-x="-2000" data-y="3000">
+      <header>
+      </header>
+      <main>
+        <h2>Tabellen (1)</h2>
+	<p>Die Grundstruktur für eine Tabelle (<code>thead</code> und <code>tfoot</code> sind fakultativ)</p>
+	<pre><code>&lt;table&gt;
+  &lt;thead&gt; &hellip; Kopf  &hellip; &lt;thead&gt;
+  &lt;tfoot&gt; &hellip; Fuß &hellip; &lt;tbody&gt;
+  &lt;tbody&gt; &hellip; Inhalt &hellip; &lt;tbody&gt;
+&lt;/table&gt;</code></pre>
+	<table>
+	<thead>
+	<tr>
+	<th>Kopfspalte 1</th>
+	<th>Kopfspalte 2</th>
+	<th>Kopfspalte 3</th>
+	</tr>
+	</thead>
+	<tfoot>
+	<tr>
+	<td>Fußspalte 1</td>
+	<td>Fußspalte 2</td>
+	<td>Fußspalte 3</td>
+	</tr>
+	</tfoot>
+	<tbody>
+	<tr>
+	<td>Textspalte 1</td>
+	<td>Textspalte 2</td>
+	<td>Textspalte 3</td>
+	</tr>
+	</tbody>
+	</table>
+      </main>
+    </section>
+
+    <section class="step slide multi" data-x="-2000" data-y="3000">
+      <header>
+      </header>
+      <main>
+        <h2>Tabellen (2)</h2>
+	<p>Tabellen lassen sich mit den Klassen <code><em>zebrastreifen</em></code>, <code>zebraspalten</code> und <code>erstespalte</code> gestalten.</p>
+	<pre><code>&lt;table class="zebrastreifen"&gt;</code></pre>
+	<table class="zebrastreifen">
+	<thead>
+	<tr>
+	<th>Spalte 1</th>
+	<th>Spalte 2</th>
+	<th>Spalte 3</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+	<td>Text</td>
+	<td>Text</td>
+	<td>Text</td>
+	</tr>
+	<tr>
+	<td>Text</td>
+	<td>Text</td>
+	<td>Text</td>
+	</tr>
+	<tr>
+	<td>Text</td>
+	<td>Text</td>
+	<td>Text</td>
+	</tr>
+	</tbody>
+	</table>
+      </main>
+    </section>
+
+    <section class="step slide multi" data-x="-2000" data-y="3000">
+      <header>
+      </header>
+      <main>
+        <h2>Tabellen (3)</h2>
+	<p>Tabellen lassen sich mit den Klassen <code>zebrastreifen</code>, <code><em>zebraspalten</em></code> und <code>erstespalte</code> gestalten.</p>
+	<pre><code>&lt;table class="zebraspalten"&gt;</code></pre>
+	<table class="zebraspalten">
+	<thead>
+	<tr>
+	<th>Spalte 1</th>
+	<th>Spalte 2</th>
+	<th>Spalte 3</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+	<td>Text</td>
+	<td>Text</td>
+	<td>Text</td>
+	</tr>
+	<tr>
+	<td>Text</td>
+	<td>Text</td>
+	<td>Text</td>
+	</tr>
+	<tr>
+	<td>Text</td>
+	<td>Text</td>
+	<td>Text</td>
+	</tr>
+	</tbody>
+	</table>
+      </main>
+    </section>
+
+    <section class="step slide multi" data-x="-2000" data-y="3000">
+      <header>
+      </header>
+      <main>
+        <h2>Tabellen (4)</h2>
+	<p>Tabellen lassen sich mit den Klassen <code>zebrastreifen</code>, <code>zebraspalten</code> und <code><em>erstespalte</em></code> gestalten.</p>
+	<pre><code>&lt;table class="erstespalte"&gt;</code></pre>
+	<table class="erstespalte">
+	<thead>
+	<tr>
+	<th>Spalte 1</th>
+	<th>Spalte 2</th>
+	<th>Spalte 3</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+	<td>Text</td>
+	<td>Text</td>
+	<td>Text</td>
+	</tr>
+	<tr>
+	<td>Text</td>
+	<td>Text</td>
+	<td>Text</td>
+	</tr>
+	<tr>
+	<td>Text</td>
+	<td>Text</td>
+	<td>Text</td>
+	</tr>
+	</tbody>
+	</table>
+      </main>
+    </section>
+
+    <section class="step slide" data-x="-3000" data-y="3000">
+      <header>
+      </header>
+      <main>
+        <h2>Mehrere Spalten</h2>
+	<pre><code>&lt;p class="mehrspaltig"&gt;&hellip;&lt;/p&gt;</code></pre>
+	<p class="mehrspaltig">Die Klasse <code>mehrspaltig</code> erzeugt - man ahnt es vielleicht schon - mehrspaltigen Text. In der CSS-Datei legt man fest, wie viele Spalten es sein sollen. In der Voreinstellung sind es zwei, wie es ja auch hier zu sehen ist. Die gleichmäßige Textaufteilung nimmt der Browser automatisch selbst vor.</p>
+	</main>
+    </section>
+
+    <section class="step slide multi" data-x="-4000" data-y="3000">
+      <header>
+      </header>
+      <main>
+        <h2>Listen (1)</h2>
+	<p>Listen (egal ob unnummerierte oder nummerierte) fügt man ganz einfach über die entsprechenden Tags <code>&lt;ul&gt;</code> und <code>&lt;ol&gt;</code> ein.</p>
+	<div class="mehrspaltig">
+	<pre><code>&lt;ul&gt;</code></pre>
+	<ul>
+	  <li>Ich bin</li>
+	  <li>eine</li>
+	  <li>unnummerierte</li>
+	  <li>Liste</li>
+	</ul>
+
+	<pre><code>&lt;ol&gt;</code></pre>
+	<ol>
+	  <li>Ich bin</li>
+	  <li>eine</li>
+	  <li>nummerierte</li>
+	  <li>Liste</li>
+	</ol>
+	</div>
+      </main>
+    </section>
+
+    <section class="step slide multi" data-x="-4000" data-y="3000">
+      <header>
+      </header>
+      <main>
+        <h2>Listen (2)</h2>
+	<p>Für längere Listen ergänzt man die Klasse <code>kompakt</code> im <code>&lt;ul&gt;</code> oder <code>&lt;ol&gt;</code>-Tag. Dann passt mehr auf eine Seite.</p>
+	<div class="mehrspaltig">
+	<pre><code>&lt;ul class="kompakt"&gt;</code></pre>
+	<ul class="kompakt">
+	  <li>Ich</li>
+	  <li>bin</li>
+	  <li>eine</li>
+	  <li>kompakte</li>
+	  <li>unnummerierte</li>
+	  <li>Liste</li>
+	</ul>
+	<pre><code>&lt;ol class="kompakt"&gt;</code></pre>
+	<ol class="kompakt">
+	  <li>Ich</li>
+	  <li>bin</li>
+	  <li>eine</li>
+	  <li>kompakte</li>
+	  <li>nummerierte</li>
+	  <li>Liste</li>
+	</ol>
+	</div>
+      </main>
+    </section>
+
+    <section class="step slide" data-x="-4000" data-y="2250">
+      <header>
+      </header>
+      <main>
+        <h2>3D-Effekt</h2>
+	<p>Mit <code>data-rotate-x</code> und <code>data-rotate-y</code> legt man die Sicht auf die x- und y-Achse fest. Beim Wert 90 (90°) ist nichts zu sehen, da man die Folien dann sozusagen genau im Querschnitt sieht. Mit <code>data-z</code> legt man fest, um wie viel der Anzeigebereich verschoben werden soll. Zusammen mit einem hohen <code>data-scale</code>-Wert erzeugt man so einen 3D-Effekt des Textes zur gesamten Präsentation (siehe nächste Folie).</p>
+	<pre><code>&lt;section class="step hide" data-x="-3000" data-y="1000" data-z="2000" 
+ data-rotate-x="30" data-rotate-y="-30" data-scale="6"&gt;</code></pre>
+      </main>
+    </section>
+
+    <section class="step hide" data-x="-3000" data-y="1250" data-z="2000" data-rotate-x="30" data-rotate-y="-30" data-scale="6">
+      <h1 style="font-size:3em;">Und hier kommt</h1>
+      <span>der 3D-Effekt</span>
+    </section>
+
+    <section class="step slide" data-x="-4000" data-y="1500">
+      <header>
+      </header>
+      <main>
+        <h2>Text-Animationen</h2>
+	<p>Soll sich der Text bewegen, ergänzt man in <code>&lt;section&gt;</code> <code>class="animation"</code>. Durch die Klassen <code>scaling</code>, <code>positioning</code> und <code>rotating</code> kann man Text dann skalieren, positionieren und drehen. Zusammen mit <code>data-rotate</code> und <code>data-scale</code> erzeugt man schöne Effekte. Die nächste "Folie" demonstriert dies.</p>
+	<pre><code>&lt;section class="step animation" data-x="1500" data-y="500" 
+  data-rotate="300" data-scale="0.5"&gt;
+  &lt;p&gt;&lt;span class="scaling"&gt;Skalierung&lt;/span&gt;&lt;br&gt;
+  &lt;span class="positioning"&gt;Positionierung&lt;/span&gt;&lt;br&gt;
+  &lt;span class="rotating"&gt;Rotation&lt;/span&gt;&lt;/p&gt;
+&lt;/section&gt;</code></pre>
+      </main>
+    </section>
+
+    <section class="step animation" data-x="-4440" data-y="1500" data-rotate="300" data-scale="0.2">
+        <p><strong><span class="scaling">Skalierung</span><br><span class="positioning">Positionierung</span><br><br><span class="rotating">Rotation</span></strong></p>
+    </section>
+
+    <section class="step slide" data-x="-4000" data-y="750">
+      <header>
+      </header>
+      <main>
+        <h2>Kopf- und Fuß</h2>
+	<p>Möchte man eine feste Kopf- und Fußzeile außerhalb der Präsentationsfläche einfügen (so wie in dieser Präsentation oben und unten links zu sehen) fügt man den Text in die ID-Bereiche <code>kopf</code> oder <code>fuss</code> ein, die sich im Quelltext ganz am Ende befinden.</p>
+	<pre><code>&lt;div id="kopf"&gt;CSS3-Transistions and Visual Effects&lt;/div&gt;</code></pre>
+	<pre><code>&lt;div id="fuss"&gt;Universitätsbibliothek Bielefeld&lt;/div&gt;</code></pre>
+      </main>
+    </section>
+
+
+    <section id="schluss" class="step slide" data-x="-4000" data-y="0">
+      <header>
+      </header>
+      <main>
+        <h2>Schlusswort</h2>
+	<p>Alles am Design kann man über die CSS-Datei anpassen. Wer sich damit auskennt, kann sich dort austoben (zur Sicherheit sollte man aber das Original als Referenz behalten, falls etwas schief geht).</p>
+	<p>Wem eine <em>"Standard"</em>-Präsentation genügt, kann den HTML-Quelltext dieser Präsentation problemlos als Steinbruch verwenden. Diese Präsentation hat dafür alle notwendigen Kenntnisse vermittelt.</p>
+      </main>
+    </section>
+
+    <section id="literatur" class="step slide multi" data-x="-4000" data-y="-750">
+      <header>
+      </header>
+      <main>
+        <h2>Websites / Literatur</h2>
+	<div class="klein">
+	<ul>
+	<li>Beeindrucke.js - Präsentationen gestalten mit Impress.js<br>Jo Bager, c't 18/2013, S. 104-106</li>
+	<li>Beispiele, Demos, Plugins: <a href="https://github.com/bartaz/impress.js/wiki/Examples-and-demos">https://github.com/bartaz/impress.js/wiki/Examples-and-demos</a></li>
+	<li>HTML5 - Ein impress.js-Präsentation, die die Möglichkeiten von HTML5 zeigt (Videos, Einbettung dynamischer Elemente)<br>
+	<a href="http://ub.unibi.de/kwihtml5">http://ub.unibi.de/kwihtml5</a></li>
+	<li>Strut-Demo<br><a href="http://www.youtube.com/watch?v=TTpiDXEIulg">http://www.youtube.com/watch?v=TTpiDXEIulg</a></li>
+	</ul>
+	</div>
+      </main>
+    </section>
+
+    <section class="step slide multi animation" data-x="-4000" data-y="-750">
+      <header>
+      </header>
+      <main>
+	<p class="gross">Und nun heißt es: <strong>Loslegen</strong> und <strong>ausprobieren</strong>.</p>
+	<p class="gross">Viel <span class="rotating">Spaß</span> dabei!</p>
+      </main>
+    </section>-->
+
+    <section id="overview" class="step" data-x="0" data-y="2000" data-rotate-x="0" data-rotate-y="0" data-scale="10"></section>
+
+</article>
+
+<!--<div class="hint">
+    <p>Verwendet die Pfeiltasten zum Navigieren</p>
+</div>-->
+
+<script>
+if ("ontouchstart" in document.documentElement) { 
+    document.querySelector(".hint").innerHTML = "<p>Verwendet die Pfeiltasten zum Navigieren</p>";
+}
+</script>
+
+<script type="text/javascript" src="js/impress.js"></script>
+<script type="text/javascript">impress().init();</script>
+
+<div id="kopf">
+<a href="#overview"><img src="http://www.schottstaedt.net/images/css3.png" width="40" alt="" style="vertical-align:top; margin-right:5px;" />CSS3: Transistions and Visual Effects</a> 
+</div>
+
+
+
+</body>
+</html>
